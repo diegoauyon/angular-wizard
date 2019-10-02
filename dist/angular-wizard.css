@@ -117,9 +117,6 @@
 .steps-indicator.steps-11 li {
   width: calc(100% / 11);
 }
-.steps-indicator li.default {
-  pointer-events: none;
-}
 .steps-indicator li.default a:hover {
   color: #808080;
 }

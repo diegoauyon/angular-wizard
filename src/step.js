@@ -1,4 +1,4 @@
-angular.module('mgo-angular-wizard').directive('wzStep', function() {
+angular.module('mgo-angular-wizard').directive('wzStep', function () {
     return {
         restrict: 'EA',
         replace: true,
@@ -6,16 +6,16 @@ angular.module('mgo-angular-wizard').directive('wzStep', function() {
         scope: {
             wzTitle: '@',
             wzHeadingTitle: '@',
-            canenter : '=',
-            canexit : '=',
+            canenter: '=',
+            canexit: '=',
             disabled: '@?wzDisabled',
             description: '@',
             wzData: '=',
             wzOrder: '@?'
         },
         require: '^wizard',
-        templateUrl: function(element, attributes) {
-          return attributes.template || "step.html";
+        templateUrl: function (element, attributes) {
+            return attributes.template || "step.html";
         },
         link: function ($scope, $element, $attrs, wizard) {
             $attrs.$observe('wzTitle', function (value) {
@@ -23,7 +23,7 @@ angular.module('mgo-angular-wizard').directive('wzStep', function() {
             });
             $scope.title = $scope.wzTitle;
             wizard.addStep($scope);
-            $scope.$on('$destroy', function(){
+            $scope.$on('$destroy', function () {
                 wizard.removeStep($scope);
             });
         }
