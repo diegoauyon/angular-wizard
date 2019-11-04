@@ -11,7 +11,8 @@ angular.module('mgo-angular-wizard').directive('wizard', function () {
             hideIndicators: '=',
             editMode: '=',
             name: '@',
-            indicatorsPosition: '@?'
+            indicatorsPosition: '@?',
+            parentScope: '=parentScope'
         },
         templateUrl: function (element, attributes) {
             return attributes.template || "wizard.html";
@@ -27,6 +28,10 @@ angular.module('mgo-angular-wizard').directive('wizard', function () {
             var firstRun = true;
             //creating instance of wizard, passing this as second argument allows access to functions attached to this via Service
             WizardHandler.addWizard($scope.name || WizardHandler.defaultName, this);
+
+            if ($scope.parentScope) {
+                $scope.parentScope.wizardInstance = this;
+            }
 
             $scope.$on('$destroy', function () {
                 WizardHandler.removeWizard($scope.name || WizardHandler.defaultName);

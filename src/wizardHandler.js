@@ -12,6 +12,10 @@ angular.module('mgo-angular-wizard').factory('WizardHandler', function() {
    service.removeWizard = function(name) {
        delete wizards[name];
    };
+
+   service.getWizards = function(){
+       return wizards;
+   };
    
    service.wizard = function(name) {
        var nameToUse = name;
