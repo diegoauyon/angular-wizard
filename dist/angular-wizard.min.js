@@ -1,6 +1,6 @@
 /**
  * Easy to use Wizard library for Angular JS
- * @version v1.1.3 - 2019-11-04 * @link https://github.com/diegoauyon/angular-wizard
+ * @version v1.1.3 - 2020-03-31 * @link https://github.com/diegoauyon/angular-wizard
  * @author Martin Gontovnikas <martin@gon.to>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
